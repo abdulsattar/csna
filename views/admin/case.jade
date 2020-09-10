@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+  h1 Case Details
+
+  - if (success)
+    .alert.success Successfully updated.
+  .container
+  form.create-case(action="/admin/case/" + id, method="POST")
+      p
+        label(for="subject") Subject
+        input(type="text" value=subject name="subject" id="subject" required)
+      p
+        label(for="description") Description
+        textarea(name="description" id="description" required)= description
+      p
+        label(for="contactemail") Contact Email
+        input(type="text" value=contactemail name="contactemail" id="contactemail" required)
+      p
+        label(for="contactmobile") Contact Mobile
+        input(type="text" value=contactmobile name="contactmobile" id="contactmobile" required)
+      p
+        label(for="priority") Priority
+        select(name="priority" value=priority required)
+          option(selected=priority=="High" value="High") High
+          option(selected=priority=="Medium" value="Medium") Medium
+          option(selected=priority=="Low" value="Low") Low
+      p
+        label(for="status") Status
+        select(name="status" value=status required)
+          option(selected=status=="New" value="New") New
+          option(selected=status=="Working" value="Working") Working
+          option(selected=status=="Escalated" value="Escalated") Escalated
+          option(selected=status=="Closed" value="Closed") Closed
+      p
+        button Update Case

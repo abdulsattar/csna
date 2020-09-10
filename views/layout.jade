@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header.header
+      .container
+        .row.justify-space-between(style="align-items: center")
+          a.logo.col(href="/")
+            img(src="https://cdn.ceat.com/svg/ceat-logo.svg" alt="logo" title="Ceat")
+          .col
+            a(href="/admin") Admin Portal
+    - if (!admin)
+      .banner
+    .container
+      - if (flash.error)
+        .alert.error= flash.error
+      - if (flash.success)
+        .alert.success= flash.success
+      block content

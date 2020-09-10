@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1 Case Details
+
+  - if (success)
+    .alert.success Case successfully created. Please visit this URL to stay updated on this case.
+  .container
+    p
+      strong Subject
+      br
+      span= subject
+    p
+      strong Description
+      br
+      span= description
+    p
+      strong Priority
+      br
+      span= priority
+    p
+      strong Status
+      br
+      span= status
+    p
+      strong Contact Email
+      br
+      span= contactemail
+    p
+      strong Contact Mobile
+      br
+      span= contactmobile

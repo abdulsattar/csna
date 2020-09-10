@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1 Login
+  .container
+    - if (invalid)
+      .alert.error Invalid username or password
+    form.create-case(action="/session/", method="POST")
+      p
+        label(for="email") Email
+        input(type="email" value="" name="email" id="email")
+      p
+        label(for="password") Password
+        input(type="password" value="" name="password" id="password")
+
+      p
+        button Login

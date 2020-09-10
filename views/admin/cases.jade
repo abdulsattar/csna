@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  h1 All Cases
+  #container
+    table(cellspacing="0")
+      tr
+        thead
+          th Subject
+          th Contact Mobile
+          th Contact Email
+          th Priority
+          th Status
+          th Salesforce ID
+      tbody
+        each c in cases
+          tr
+            td
+              a(href='/admin/case/' + c.id)= c.subject
+            td= c.contactmobile
+            td= c.contactemail
+            td= c.priority
+            td= c.status
+            td= c.sfid

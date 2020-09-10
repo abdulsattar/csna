@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 Parts
+  #container
+    table
+      tr
+        th Name
+        th Description
+        th Salesforce ID
+      each c in cases
+        tr
+          td= c.name
+          td= c.description__c
+          td= c.sfid
+    form.create-case(action="/parts", method="POST")
+      p
+        label(for="name") Name
+        br/
+        input(type="text" value="" name="name" id="name")
+      p
+        label(for="description") Description
+        br/
+        input(type="text" value="" name="description" id="description")
+
+      p
+        button Create Case

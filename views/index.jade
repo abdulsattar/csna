@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1 Create Case
+  p 
+    | Our Help Center is facing technical issues. This is our backup portal where you can continue creating cases. 
+    br
+    | Our commitment to your well-being is still going strong!
+  #container
+    form.create-case(action="/", method="POST")
+      p
+        label(for="subject") Subject
+        input(type="text" value="" name="subject" id="subject" required)
+      p
+        label(for="description") Description
+        textarea(name="description" id="description" required)
+      p
+        label(for="contactemail") Contact Email
+        input(type="text" value="" name="contactemail" id="contactemail" required)
+      p
+        label(for="contactmobile") Contact Mobile
+        input(type="text" value="" name="contactmobile" id="contactmobile" required)
+      p
+        label(for="priority") Priority
+        select(name="priority" required)
+          option(value="High") High
+          option(value="Medium") Medium
+          option(value="Low") Low
+      p
+        button Create Case
